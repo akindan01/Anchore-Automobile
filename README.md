@@ -1,93 +1,136 @@
-# Anchore Automobiles
+<div align="center">
+  
+  # Anchore Automobiles
+  
+  **Premium Certified Vehicles, Lagos**
+  
+  <p>
+    Nigeria's premium destination for certified luxury vehicles, importation, financing, and after-sales care. Drive Excellence. Experience Luxury.
+  </p>
+  
+  [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+  [![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-black?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+  [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+</div>
 
-A premium, award-quality landing page for a Nigerian luxury automobile
-dealership, built with Next.js (App Router), Tailwind CSS, and Framer Motion.
+<br />
 
-## Getting started
+## 🌟 Overview
 
-```bash
-npm install
-npm run dev
+Anchore Automobiles is an award-quality, modern, and highly responsive landing page for a premium luxury automobile dealership located in Lagos, Nigeria. Built with a focus on high performance, accessibility, and sleek aesthetics, it serves as a powerful digital storefront to attract high-end clientele.
+
+The application boasts smooth scroll reveals, dynamic hover states, and meticulously crafted UI components that mirror the elegance of the luxury vehicles it showcases.
+
+## ✨ Key Features
+
+- **Immersive Hero Section:** Captivating entry point with animated staggered text, high-resolution imagery, and a sleek ticker tape.
+- **Premium Vehicle Showcase:** Beautifully designed car cards featuring specs (engine, transmission, mileage) styled like an authentic automotive spec sheet.
+- **Luxury Services Highlights:** Detailed breakdown of services including importation, financing, trade-ins, and bespoke maintenance.
+- **Client Testimonials:** Dynamic slider featuring reviews from satisfied elite customers.
+- **Interactive FAQ & Process Sections:** Accordion-based FAQs and a step-by-step guide to the purchasing/importation process.
+- **Performance Optimized:** Built on Next.js App Router for optimal Server-Side Rendering (SSR) and image optimization.
+- **Smooth Animations:** Powered by Framer Motion for scroll reveals, micro-interactions, and page-load sequencing.
+- **Fully Responsive:** Flawless experience across desktop, tablet, and mobile devices.
+
+## 🛠️ Technology Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router, JavaScript)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Typography:** Google Fonts (Bricolage Grotesque, Manrope, JetBrains Mono)
+
+## 🎨 Design System
+
+The platform utilizes a bespoke design system meticulously crafted for the luxury automotive niche.
+
+| Element | Description | Value |
+| :--- | :--- | :--- |
+| **Primary Background** | `obsidian` | `#0B0B0B` |
+| **Inverted Light Band** | `bone` | `#F5F3EF` |
+| **Accent / CTAs** | `anchor` | `#B30000` |
+| **Display Font** | Bricolage Grotesque | Elegant, bold headings |
+| **Body Font** | Manrope | highly legible body text |
+| **Mono Font** | JetBrains Mono | Used for specs, pricing, and labels |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or later
+- npm or yarn or pnpm
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/akindan01/Anchore-Automobile.git
+   cd Anchore-Automobile
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open the application:**
+   Navigate to [http://localhost:3000](http://localhost:3000) in your preferred browser.
+
+## 🏗️ Project Structure
+
+```text
+anchore-automobiles/
+├── app/                  # Next.js App Router configuration
+│   ├── globals.css       # Global styles, variables, & reduced-motion
+│   ├── layout.js         # Root layout, fonts, SEO metadata
+│   └── page.js           # Main landing page assembling all sections
+├── components/           # Reusable React components
+│   ├── cards/            # CarCard, FeatureCard, ServiceCard
+│   ├── layout/           # Navbar, Footer
+│   ├── sections/         # Page sections (Hero, About, FAQ, etc.)
+│   └── ui/               # Reusable primitives (Buttons, Containers)
+├── data/                 # Static JSON/JS data 
+│   ├── faqs.js           # FAQ accordion data
+│   ├── services.js       # Luxury services list
+│   ├── testimonials.js   # Client reviews
+│   └── vehicles.js       # Featured inventory
+└── public/               # Static assets (images, icons)
 ```
 
-Then open http://localhost:3000.
+## 🚀 Pre-Launch Checklist
 
-To build for production:
+This project ships with realistic **placeholder content** so it looks complete out of the box. Please ensure you update the following before deploying to production:
 
-```bash
-npm run build
-npm run start
-```
+1. **Vehicle Inventory (`data/vehicles.js`):** Replace placeholder cars, prices, and specs with your actual inventory. If using external images, update `next.config.js` -> `images.remotePatterns`.
+2. **Contact Details (`components/sections/Contact.jsx`):** Update phone numbers, emails, and physical address.
+3. **Map Integration:** Swap the styled map placeholder in the Contact section with a real Google Maps iframe or `@react-google-maps/api`.
+4. **Testimonials (`data/testimonials.js`):** Add genuine reviews and client photos.
+5. **Form Handling:** 
+   - Wire the Contact Form (`ContactForm.jsx`) to your backend CRM or an API route (e.g., Resend, SendGrid).
+   - Connect the Footer Newsletter form to your email provider (Mailchimp, Klaviyo).
 
-## Stack
+## ♿ Accessibility & Performance
 
-- **Next.js 14** (App Router, JavaScript)
-- **Tailwind CSS** — custom design tokens in `tailwind.config.js`
-  (colors, fonts, letter-spacing, keyframes)
-- **Framer Motion** — scroll reveals, hover states, page-load sequencing
-- **Lucide React** — icon set throughout
+- **Keyboard Navigation:** All interactive elements feature visible keyboard focus states.
+- **Reduced Motion:** Respects user preferences via `prefers-reduced-motion` queries.
+- **Image Optimization:** Utilizes `next/image` with responsive sizing for aggressive lazy loading and fast LCP.
+- **Semantic HTML:** Proper use of ARIA labels, semantic headings, and roles throughout the application.
 
-## Project structure
+## 📄 License
 
-```
-app/
-  layout.js        Root layout, fonts, metadata
-  page.js          Assembles every section for the landing page
-  globals.css       Base styles, focus states, scrollbar, reduced-motion
-components/
-  layout/           Navbar, Footer
-  sections/         One file per page section (Hero, Services, Contact, ...)
-  cards/            CarCard, FeatureCard, ServiceCard
-  ui/               Reusable primitives — Button, Container, SectionTitle,
-                    AnimatedCounter
-data/
-  vehicles.js       Inventory shown in "Featured Vehicles"
-  services.js       The 8 services shown in "Luxury Services"
-  testimonials.js   Client quotes shown in the testimonial slider
-  faqs.js           Questions/answers for the FAQ accordion
-```
+This project is proprietary and intended for use by Anchore Automobiles. All rights reserved.
 
-## Design system
-
-| Token          | Value                          |
-|----------------|--------------------------------|
-| `obsidian`     | `#0B0B0B` — primary background |
-| `bone`         | `#F5F3EF` — inverted light band|
-| `anchor`       | `#B30000` — accent / CTAs      |
-| Display font   | Bricolage Grotesque            |
-| Body font      | Manrope                        |
-| Mono / spec font | JetBrains Mono (used for prices, specs, the hero ticker, and labels — echoing an automotive spec sheet) |
-
-## Before you launch this for a real dealership
-
-This project ships with realistic **placeholder content** so it looks
-complete out of the box. Swap these out before going live:
-
-1. **Vehicle photos & data** — `data/vehicles.js` currently points to
-   royalty-free Unsplash photos and illustrative pricing/specs. Replace
-   `image`, `price`, `mileage`, etc. with your actual inventory and photos
-   (upload real photos to `/public` or your own image host, then update
-   `next.config.js` → `images.remotePatterns` if you use a new domain).
-2. **Contact details** — phone, email, and address in
-   `components/sections/Contact.jsx` are placeholders.
-3. **Google Map** — the map panel in the Contact section is a styled
-   placeholder. Swap it for a real Google Maps embed/iframe or the
-   `@react-google-maps/api` package once you have an API key.
-4. **Testimonials** — `data/testimonials.js` contains illustrative reviews
-   with generated initials-based avatars (via ui-avatars.com). Replace with
-   real client quotes and, ideally, real client photos (with permission).
-5. **Contact form backend** — `ContactForm.jsx` currently simulates a
-   submission with a timeout. Wire the `handleSubmit` function to your
-   email service, CRM, or an API route (e.g. `app/api/contact/route.js`)
-   before launch.
-6. **Newsletter signup** — same idea; wire `Footer.jsx`'s form to your
-   email provider (Mailchimp, Resend, etc.).
-
-## Accessibility & performance notes
-
-- All interactive elements have visible keyboard focus states.
-- `prefers-reduced-motion` is respected globally.
-- Images use `next/image` with responsive `sizes` for lazy loading and
-  optimized delivery.
-- Semantic headings and ARIA labels are used throughout (nav, buttons,
-  accordion, form fields).
+---
+<div align="center">
+  <i>Drive Excellence. Experience Luxury.</i>
+</div>
