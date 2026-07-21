@@ -16,13 +16,13 @@
 
 <br />
 
-## 🌟 Overview
+##  Overview
 
 Anchore Automobiles is an award-quality, modern, and highly responsive landing page for a premium luxury automobile dealership located in Lagos, Nigeria. Built with a focus on high performance, accessibility, and sleek aesthetics, it serves as a powerful digital storefront to attract high-end clientele.
 
 The application boasts smooth scroll reveals, dynamic hover states, and meticulously crafted UI components that mirror the elegance of the luxury vehicles it showcases.
 
-## ✨ Key Features
+##  Key Features
 
 - **Immersive Hero Section:** Captivating entry point with animated staggered text, high-resolution imagery, and a sleek ticker tape.
 - **Premium Vehicle Showcase:** Beautifully designed car cards featuring specs (engine, transmission, mileage) styled like an authentic automotive spec sheet.
@@ -33,7 +33,7 @@ The application boasts smooth scroll reveals, dynamic hover states, and meticulo
 - **Smooth Animations:** Powered by Framer Motion for scroll reveals, micro-interactions, and page-load sequencing.
 - **Fully Responsive:** Flawless experience across desktop, tablet, and mobile devices.
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Framework:** [Next.js 14](https://nextjs.org/) (App Router, JavaScript)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
@@ -41,7 +41,7 @@ The application boasts smooth scroll reveals, dynamic hover states, and meticulo
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Typography:** Google Fonts (Bricolage Grotesque, Manrope, JetBrains Mono)
 
-## 🎨 Design System
+##  Design System
 
 The platform utilizes a bespoke design system meticulously crafted for the luxury automotive niche.
 
@@ -54,7 +54,7 @@ The platform utilizes a bespoke design system meticulously crafted for the luxur
 | **Body Font** | Manrope | highly legible body text |
 | **Mono Font** | JetBrains Mono | Used for specs, pricing, and labels |
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -86,7 +86,7 @@ The platform utilizes a bespoke design system meticulously crafted for the luxur
 4. **Open the application:**
    Navigate to [http://localhost:3000](http://localhost:3000) in your preferred browser.
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```text
 anchore-automobiles/
@@ -107,7 +107,7 @@ anchore-automobiles/
 └── public/               # Static assets (images, icons)
 ```
 
-## 🚀 Pre-Launch Checklist
+##  Pre-Launch Checklist
 
 This project ships with realistic **placeholder content** so it looks complete out of the box. Please ensure you update the following before deploying to production:
 
@@ -119,14 +119,14 @@ This project ships with realistic **placeholder content** so it looks complete o
    - Wire the Contact Form (`ContactForm.jsx`) to your backend CRM or an API route (e.g., Resend, SendGrid).
    - Connect the Footer Newsletter form to your email provider (Mailchimp, Klaviyo).
 
-## ♿ Accessibility & Performance
+##  Accessibility & Performance
 
 - **Keyboard Navigation:** All interactive elements feature visible keyboard focus states.
 - **Reduced Motion:** Respects user preferences via `prefers-reduced-motion` queries.
 - **Image Optimization:** Utilizes `next/image` with responsive sizing for aggressive lazy loading and fast LCP.
 - **Semantic HTML:** Proper use of ARIA labels, semantic headings, and roles throughout the application.
 
-## 📄 License
+##  License
 
 This project is proprietary and intended for use by Anchore Automobiles. All rights reserved.
 
