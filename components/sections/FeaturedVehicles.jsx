@@ -14,8 +14,14 @@ export default function FeaturedVehicles() {
             title="Featured Vehicles"
             description="A rotating selection of certified vehicles from our Lagos showroom, each backed by a full 128-point inspection."
           />
-          <Button href="#contact" variant="secondary" className="hidden shrink-0 md:inline-flex">
-            View Full Inventory
+          <Button
+            href="https://wa.me/2347065629472?text=Hello%20Anchore%20Autos%2C%20I%20would%20like%20to%20inquire%20about%20your%20full%20inventory%20and%20upcoming%20vehicles."
+            variant="secondary"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden shrink-0 md:inline-flex"
+          >
+            Chat For More on WhatsApp
           </Button>
         </div>
 
@@ -26,8 +32,13 @@ export default function FeaturedVehicles() {
         </div>
 
         <div className="mt-10 flex justify-center md:hidden">
-          <Button href="#contact" variant="secondary">
-            View Full Inventory
+          <Button
+            href="https://wa.me/2347065629472?text=Hello%20Anchore%20Autos%2C%20I%20would%20like%20to%20inquire%20about%20your%20full%20inventory%20and%20upcoming%20vehicles."
+            variant="secondary"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Chat For More on WhatsApp
           </Button>
         </div>
       </Container>

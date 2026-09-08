@@ -15,6 +15,11 @@ module.exports = {
         platinum: "#E8E6E1",
         steel: "#8F8F94",
         smoke: "#5B5B60",
+        cobalt: {
+          DEFAULT: "#0B3B95",
+          light: "#1451C8",
+          dark: "#082C72",
+        },
         anchor: {
           DEFAULT: "#B30000",
           light: "#D91E1E",
@@ -25,6 +30,7 @@ module.exports = {
         display: ["var(--font-display)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
+        serif: ["var(--font-serif)", "serif"],
       },
       letterSpacing: {
         tightest: "-0.04em",

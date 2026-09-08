@@ -2,120 +2,118 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Button from "@/components/ui/Button";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
-const stats = [
-  { value: 12, suffix: "+", label: "Years Experience" },
-  { value: 1800, suffix: "+", label: "Vehicles Sold" },
-  { value: 950, suffix: "+", label: "Satisfied Clients" },
-  { value: 70, suffix: "", label: "Cars Available" },
-];
+const EASE = [0.16, 1, 0.3, 1];
 
-const specStrip = [
-  "0–100 KM/H — 3.2S",
-  "TOP SPEED — 320 KM/H",
-  "CERTIFIED INSPECTION — 128 POINTS",
-  "SHOWROOM — FAGBA, LAGOS",
-  "NATIONWIDE DELIVERY — AVAILABLE",
-  "FINANCING — FROM 12 MONTHS",
+const stats = [
+  { value: 1000, suffix: "+", label: "Vehicles Sold" },
+  { value: 10, suffix: "+", label: "Years in Business" },
+  { value: 98, suffix: "%", label: "Customer Satisfaction" },
+  { value: 500, suffix: "+", label: "Happy Clients" },
 ];
 
 export default function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen flex-col overflow-hidden bg-obsidian pt-28">
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1731577053683-d5b4156a2d52?auto=format&fit=crop&w=2400&q=80"
-          alt="Matte black Mercedes-AMG GT 63 with red accent detailing, rear three-quarter view"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[70%_center] opacity-70"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/75 to-obsidian/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/40" />
-      </div>
+    <section id="home" className="relative flex min-h-screen flex-col justify-between bg-obsidian overflow-hidden pt-24 md:pt-28">
+      {/* AMBIENT GLOW ACCENT */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-anchor/10 blur-[120px]" />
+      <div className="pointer-events-none absolute right-0 top-1/3 h-[500px] w-[500px] rounded-full bg-anchor/10 blur-[140px]" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-container flex-1 flex-col justify-center px-6 md:px-10 lg:px-16">
-        <motion.div
-          initial={{ opacity: 0, x: -16 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-6 flex items-center gap-3"
-        >
-          <span className="h-px w-8 bg-anchor" />
-          <span className="font-mono text-[11px] font-medium uppercase tracking-widest2 text-anchor">
-            Anchore Automobiles — Lagos, Nigeria
-          </span>
-        </motion.div>
+      {/* MAIN HERO STAGE */}
+      <div className="relative mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-6 py-8 md:px-12 lg:px-16 lg:py-12">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
+          {/* LEFT COLUMN: EDITORIAL TYPOGRAPHY & CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: EASE }}
+            className="z-10 max-w-xl lg:col-span-6"
+          >
+            {/* Headline */}
+            <h1 className="font-serif text-[clamp(2.9rem,5.6vw,5.4rem)] font-normal leading-[1.04] tracking-[-0.03em] text-white">
+              Drive Excellence
+              <br />
+              Experience
+              <br />
+              Luxury.
+            </h1>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl text-balance font-display text-[clamp(2.75rem,7vw,6rem)] font-semibold leading-[0.98] tracking-tightest text-white"
-        >
-          Drive Excellence.
-          <br />
-          <span className="text-anchor">Experience Luxury.</span>
-        </motion.h1>
+            {/* Subtitle */}
+            <p className="mt-6 max-w-md font-body text-sm leading-relaxed text-steel md:text-base">
+              Nigeria&apos;s premium destination for certified luxury vehicles — sourced, inspected, and delivered with the standard of care your next car deserves.
+            </p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.28 }}
-          className="mt-7 max-w-lg text-balance font-body text-base leading-relaxed text-platinum/80 md:text-lg"
-        >
-          Nigeria&apos;s premium destination for certified luxury vehicles —
-          sourced, inspected, and delivered with the standard of care your
-          next car deserves.
-        </motion.p>
+            {/* Action Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-6 sm:gap-8">
+              <a
+                href="#inventory"
+                className="inline-flex items-center justify-center rounded-[2px] bg-anchor px-7 py-3.5 font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-[0_6px_20px_-6px_rgba(179,0,0,0.5)] transition-all duration-200 hover:bg-anchor-light active:scale-95"
+              >
+                EXPLORE INVENTORY
+              </a>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.42 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
-        >
-          <Button href="#inventory" variant="primary">
-            Browse Inventory
-          </Button>
-          <Button href="#contact" variant="secondary">
-            Book Inspection
-          </Button>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-white/10 pt-8 sm:grid-cols-4 md:mt-24"
-        >
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <div className="font-display text-3xl font-semibold text-white md:text-4xl">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              </div>
-              <div className="mt-1.5 font-body text-xs uppercase tracking-wide text-steel md:text-sm">
-                {stat.label}
-              </div>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-2 font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:text-anchor"
+              >
+                <span>BOOK INSPECTION</span>
+                <span className="text-[9px] text-white transition-transform group-hover:translate-x-0.5 group-hover:text-anchor">
+                  ▶
+                </span>
+              </a>
             </div>
-          ))}
-        </motion.div>
+          </motion.div>
+
+          {/* RIGHT COLUMN: LUXURY VEHICLE SEAMLESSLY BLENDED INTO OBSIDIAN */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, delay: 0.15, ease: EASE }}
+            className="relative lg:col-span-6 flex items-center justify-center"
+          >
+            <div className="relative w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/hero-car-dark.jpg"
+                alt="Anchore Elite Luxury Performance Vehicle"
+                width={1200}
+                height={675}
+                priority
+                quality={95}
+                className="h-auto w-full object-cover brightness-[0.95] contrast-[1.05]"
+              />
+              {/* Seamless gradient fade blending into obsidian */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/40" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-obsidian via-transparent to-obsidian/30" />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10 rounded-2xl" />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Minimalist Center Scroll Indicator */}
+        <div className="relative z-10 flex flex-col items-center pt-8 pb-2">
+          <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.38em] text-steel">
+            SCROLL
+          </span>
+        </div>
       </div>
 
-      <div className="relative z-10 mt-16 overflow-hidden border-t border-white/10 bg-black/40 py-4">
-        <div className="flex w-max animate-marquee gap-10 whitespace-nowrap">
-          {[...specStrip, ...specStrip].map((item, i) => (
-            <span
-              key={i}
-              className="flex items-center gap-10 font-mono text-xs tracking-wide text-steel"
-            >
-              {item}
-              <span className="text-anchor">◆</span>
-            </span>
-          ))}
+      {/* STATISTICS BAR ATTACHED IMMEDIATELY UNDER HERO (EXACTLY FROM STATISTICS.JSX) */}
+      <div className="relative z-20 w-full border-t border-white/[0.08] bg-obsidian py-12 md:py-14 text-white">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="relative text-left border-l border-white/10 pl-6 first:border-l-0">
+                <div className="font-display text-[clamp(2.4rem,4.5vw,3.6rem)] font-bold leading-none tracking-tight text-white">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="mt-3 h-[2px] w-8 bg-anchor" />
+                <div className="mt-3 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-steel">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Twitter, Youtube, ArrowRight, Check } from "lucide-react";
+import { Instagram, Facebook, Twitter, Youtube, ArrowRight, Check, MapPin, Mail, Phone, Clock } from "lucide-react";
 import Container from "@/components/ui/Container";
+import Logo from "@/components/ui/Logo";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -42,15 +43,11 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/[0.08] bg-obsidian pt-20">
       <Container>
-        <div className="grid grid-cols-1 gap-12 pb-16 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr]">
+        <div className="grid grid-cols-1 gap-12 pb-16 lg:grid-cols-[1.3fr_0.7fr_0.8fr_1.2fr]">
+          {/* Brand & Overview */}
           <div>
-            <a href="#home" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-anchor/60 font-display text-base font-bold text-anchor">
-                A
-              </span>
-              <span className="font-display text-lg font-semibold text-white">
-                Anchore <span className="text-steel font-normal">Automobiles</span>
-              </span>
+            <a href="#home" className="inline-flex items-center text-white">
+              <Logo />
             </a>
             <p className="mt-5 max-w-sm font-body text-sm leading-relaxed text-steel">
               Nigeria&apos;s premium destination for certified luxury
@@ -73,6 +70,7 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
             <p className="font-mono text-[11px] uppercase tracking-widest2 text-anchor">
               Quick Links
@@ -91,6 +89,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Services */}
           <div>
             <p className="font-mono text-[11px] uppercase tracking-widest2 text-anchor">
               Services
@@ -109,44 +108,85 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Showroom & Contact Info */}
           <div>
             <p className="font-mono text-[11px] uppercase tracking-widest2 text-anchor">
-              Newsletter
+              Showroom & Contact
             </p>
-            <p className="mt-5 font-body text-sm leading-relaxed text-steel">
-              New arrivals and financing offers, straight to your inbox.
-            </p>
-            {subscribed ? (
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-4 flex items-center gap-2 font-mono text-xs text-anchor"
-              >
-                <Check className="h-4 w-4" /> You&apos;re subscribed
-              </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} className="mt-4 flex items-center gap-2">
-                <label htmlFor="footer-email" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="footer-email"
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@email.com"
-                  className="w-full rounded-full border border-white/15 bg-surface px-4 py-2.5 font-body text-sm text-white placeholder:text-smoke focus:border-white/40 focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  aria-label="Subscribe"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-anchor text-white transition-colors hover:bg-anchor-light"
+            <ul className="mt-5 space-y-3.5 text-steel font-body text-sm">
+              <li className="flex items-start gap-3">
+                <MapPin className="h-4 w-4 shrink-0 text-anchor mt-1" />
+                <a
+                  href="https://maps.google.com/?q=175+Iju+Road+by+Fagba+Junction+opp+Savoury+Ifako+Ijaye+Lagos"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white transition-colors"
                 >
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
-            )}
+                  175 Iju Road by Fagba Junction opp Savoury Ifako Ijaye Lagos
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="h-4 w-4 shrink-0 text-anchor" />
+                <a
+                  href="mailto:anchor_autos@yahoo.com"
+                  className="hover:text-white transition-colors"
+                >
+                  anchor_autos@yahoo.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-4 w-4 shrink-0 text-anchor" />
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  +234 911 997 7999, +234 706 562 9472 (Call & WhatsApp)
+                </a>
+              </li>
+              <li className="flex items-center gap-3 text-xs font-mono text-smoke">
+                <Clock className="h-4 w-4 shrink-0 text-anchor" />
+                <span>Mon – Sat: 8:00 AM – 6:00 PM</span>
+              </li>
+            </ul>
+
+            {/* Newsletter */}
+            <div className="mt-6 pt-6 border-t border-white/[0.08]">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-smoke">
+                Newsletter Updates
+              </p>
+              {subscribed ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-3 flex items-center gap-2 font-mono text-xs text-anchor"
+                >
+                  <Check className="h-4 w-4" /> You&apos;re subscribed
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="mt-3 flex items-center gap-2">
+                  <label htmlFor="footer-email" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    id="footer-email"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@email.com"
+                    className="w-full rounded-full border border-white/15 bg-surface px-4 py-2 font-body text-xs text-white placeholder:text-smoke focus:border-white/40 focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    aria-label="Subscribe"
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-anchor text-white transition-colors hover:bg-anchor-light"
+                  >
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
         </div>
 

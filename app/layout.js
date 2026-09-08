@@ -1,5 +1,6 @@
-import { Bricolage_Grotesque, Manrope, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Manrope, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -22,6 +23,13 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const serif = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata = {
   title: "Anchore Automobiles | Premium Certified Vehicles, Lagos",
   description:
@@ -33,18 +41,27 @@ export const metadata = {
     "certified vehicles Nigeria",
     "car importation Nigeria",
   ],
+  icons: {
+    icon: "/anchore-logo.png",
+    shortcut: "/anchore-logo.png",
+    apple: "/anchore-logo.png",
+  },
   openGraph: {
     title: "Anchore Automobiles | Premium Certified Vehicles, Lagos",
     description:
       "Nigeria's premium destination for certified luxury vehicles, importation, financing, and after-sales care.",
     type: "website",
+    images: ["/anchore-logo.png"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable} ${serif.variable}`}>
+      <body>
+        {children}
+        <FloatingWhatsApp />
+      </body>
     </html>
   );
 }

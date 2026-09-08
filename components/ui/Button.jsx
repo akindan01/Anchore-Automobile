@@ -23,6 +23,9 @@ export default function Button({
   icon = true,
   className = "",
   type = "button",
+  target,
+  rel,
+  ...props
 }) {
   const [ripples, setRipples] = useState([]);
 
@@ -85,14 +88,24 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} aria-label={typeof children === "string" ? children : undefined}>
+      <Link
+        href={href}
+        target={target}
+        rel={rel}
+        aria-label={typeof children === "string" ? children : undefined}
+        {...props}
+      >
         {content}
       </Link>
     );
   }
 
   return (
-    <button type={type} aria-label={typeof children === "string" ? children : undefined}>
+    <button
+      type={type}
+      aria-label={typeof children === "string" ? children : undefined}
+      {...props}
+    >
       {content}
     </button>
   );
