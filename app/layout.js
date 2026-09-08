@@ -36,6 +36,10 @@ export const metadata = {
     "Anchore Automobiles is Nigeria's premium destination for certified luxury vehicles, importation, financing, and after-sales care. Drive Excellence. Experience Luxury.",
   keywords: [
     "Anchore Automobiles",
+    "lagos luxury cars",
+    "lagos auto dealers",
+    "lagos car dealership",
+    "top 5 Nigeria auto dealers",
     "luxury cars Nigeria",
     "car dealership Lagos",
     "certified vehicles Nigeria",

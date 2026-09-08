@@ -60,7 +60,6 @@ export default function Hero() {
               >
                 <span>BOOK INSPECTION</span>
                 <ArrowRight className="text-[6px] text-white transition-transform group-hover:translate-x-0.5 group-hover:text-anchor">
-                  ▶
                 </ArrowRight>
               </a>
             </div>
