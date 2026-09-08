@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -58,9 +59,9 @@ export default function Hero() {
                 className="group inline-flex items-center gap-2 font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:text-anchor"
               >
                 <span>BOOK INSPECTION</span>
-                <span className="text-[9px] text-white transition-transform group-hover:translate-x-0.5 group-hover:text-anchor">
+                <ArrowRight className="text-[6px] text-white transition-transform group-hover:translate-x-0.5 group-hover:text-anchor">
                   ▶
-                </span>
+                </ArrowRight>
               </a>
             </div>
           </motion.div>
@@ -95,6 +96,12 @@ export default function Hero() {
           <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.38em] text-steel">
             SCROLL
           </span>
+
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            className="w-[1px] h-6 bg-gradient-to-b from-white/80 to-transparent"
+          />
         </div>
       </div>
 
