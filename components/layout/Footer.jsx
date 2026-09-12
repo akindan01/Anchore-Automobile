@@ -137,8 +137,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-anchor" />
                 <a
-                  target="_blank"
-                  rel="noreferrer"
+                  href="tel:+2349119977999"
                   className="hover:text-white transition-colors"
                 >
                   +234 911 997 7999, +234 706 562 9472 (Call & WhatsApp)

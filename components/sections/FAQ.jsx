@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -41,21 +41,23 @@ export default function FAQ() {
                       <Plus className="h-4 w-4" />
                     </span>
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pb-6 pr-14 font-body text-sm leading-relaxed text-steel md:text-base">
-                          {faq.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* The answer stays in the DOM even while collapsed so FAQ
+                      content is never hidden from search engines; visibility
+                      is controlled purely by the height/opacity animation. */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: isOpen ? "auto" : 0,
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                    aria-hidden={!isOpen}
+                  >
+                    <p className="pb-6 pr-14 font-body text-sm leading-relaxed text-steel md:text-base">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
                 </div>
               );
             })}
